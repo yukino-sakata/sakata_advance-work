@@ -1,0 +1,1 @@
+register-thanks.blade.php

@@ -1,0 +1,63 @@
+.shop-cards {
+    display: flex;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    width: 80%;
+}
+
+.card {
+    background: #FFF;
+    width: 250px;
+    height: 270px;
+    margin: 10px 8px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px #AAA;
+}
+
+.card__image {
+    width: 250px;
+    height: 150px;
+    border-radius: 5px 5px 0 0;
+}
+
+.card-info {
+    margin: 20px;
+}
+
+.shop__name {
+    font-weight: bold;
+    margin: 10px 0 0 0;
+    line-height: 15px;
+}
+
+.shop__area,
+.shop__genre {
+    display: inline;
+    font-size: 11px;
+}
+
+.detail {
+    display: flex;
+    justify-content: space-between;
+}
+
+.shop__detail {
+    width: 90px;
+    height: 28px;
+    line-height: 28px;
+    background: #36F;
+    text-align: center;
+    color: #FFF;
+    font-size: 12px;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+.shop__bookmark {
+    font-size: 35px;
+    line-height: 40px;
+    color: #CCC;
+}

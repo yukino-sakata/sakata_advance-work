@@ -1,0 +1,57 @@
+.header {
+    height: 70px;
+}
+
+.header__inner {
+    height: 50px;
+    width: 50px;
+    background: #36F;
+    margin: 20px 0 0 150px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 3px #AAA;
+    font-weight: thin;
+}
+
+.header__logo {
+    font-size: 40px;
+    font-weight: lighter;
+    color: #FFF;
+    text-decoration: none;
+}
+
+.header__logo a {
+    font-family: inherit;
+    font-weight: thin;
+}
+
+.content {
+    width: 300px;
+    margin: 100px auto;
+    text-align: center;
+}
+
+.link {
+    list-style: none;
+}
+
+.link__logout {
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: #36F;
+    font-weight: normal;
+}
+
+.link-item a {
+    text-decoration: none;
+    font-size: 30px;
+    color: #36F;
+    line-height: 80px;
+}
+
+button {
+    font-family: inherit;
+    font-weight: normal;
+}

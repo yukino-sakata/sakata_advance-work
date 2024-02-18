@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ShopController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::middleware('auth')->group(function(){
+    Route::get('/', [AuthController::class, 'index']);
 });
+Route::get('/login', [AuthController::class, 'login'])->name('login');
+Route::get('/register', [AuthController::class, 'register']);
+Route::get('/menu1', [AuthController::class, 'menu1']);
+Route::get('/menu2', [AuthController::class, 'menu2']);
+Route::get('/mypage', [AuthController::class, 'mypage']);
+Route::get('/shoplist', [ShopController::class, 'shoplist']);
+Route::get('/detail', [ShopController::class, 'detail']);
+Route::post('detail', [ShopController::class, 'detail']);
+Route::post('reserved', [ShopController::class, 'reserved']);
