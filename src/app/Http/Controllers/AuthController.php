@@ -28,9 +28,4 @@ class AuthController extends Controller
         return view('menu2');
     }
 
-    public function mypage(){
-        return view('mypage');
-    }
-
-
 }

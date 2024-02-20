@@ -11,7 +11,7 @@
     <div class="left-content">
         <div class="index">
             <a class="back" href="shoplist"><</a>
-            <p class="shop__name">{{$shop->shop_name}}</p>
+            <p class="shop__name">{{$shop->shop__name}}</p>
         </div>
         <img class="image" src="{{$shop->image}}">
         <div class="tag">
@@ -28,6 +28,9 @@
             @csrf
             <p class="reserved__header">予約</p>
                 <div class="reserved__form">
+                    @if(count($errors)>0)
+                    日付を指定してください
+                    @endif
                     <input class="form__item item__date" type="date" name="date">
                     <select class="form__item item__time" name="time">
                         <option value="17:00">17:00</option>

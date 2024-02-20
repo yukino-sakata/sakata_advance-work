@@ -1,0 +1,69 @@
+.content {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.left-content {
+    width: 400px;
+    height: 500px;
+}
+
+.index {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.reserved-card {
+    background: #36F;
+    width: 380px;
+    height: 210px;
+    color: #FFF;
+    margin: 10px 0;
+    padding: 20px;
+    box-shadow: 3px 3px 3px #AAA;
+    border-radius: 5px;
+}
+
+
+.card__header {
+    display: flex;
+    width: 90%;
+    height: 40px;
+    line-height: 20px;
+    position: relative;
+    justify-content: space-between;
+}
+
+.bi {
+    font-size: 20px;
+}
+
+.reserved-no {
+    position: absolute;
+    translate: 40px -12px;
+    font-size: 13px;
+}
+
+.delete {
+    background: #36F;
+    font-size: 20px;
+    border: none;
+    color: #FFF;
+}
+
+.table-wrap {
+    display: block;
+    width: 380px;
+    font-size: 13px;
+}
+
+.form-value tr {
+    height: 30px;
+}
+
+.form-value th {
+    width: 50%;
+    text-align: left;
+    font-weight: 100;
+}
+

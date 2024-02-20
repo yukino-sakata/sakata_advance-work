@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Shop;
 use App\Models\Reserved;
+use App\Http\Requests\ReservedRequest;
 use Auth;
 
 
@@ -32,5 +33,21 @@ class ShopController extends Controller
             ];
         Reserved::create($form);
         return view('thanks');
+    }
+
+    public function mypage(Request $request){
+        $user = Auth::user();
+//        $reservations = Reserved::where('user_id',$user->id)->join('shops','reserveds.shop_id', '=', 'shops.id')->get();
+
+        $reservations = Shop::join('reserveds','shops.id', '=', 'reserveds.shop_id')->where('user_id',$user->id)->get();
+
+        return view('mypage',['reservations'=>$reservations]);
+    }
+
+    public function delete(Request $request){
+        $user = Auth::user();
+        $reservation = Reserved::where('id',$request->reservation__id)->delete();
+
+        return redirect('mypage');
     }
 }
