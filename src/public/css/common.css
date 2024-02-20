@@ -28,6 +28,7 @@ body {
 }
 
 .icon {
+    display: block;
     width: 34px;
     height: 34px;
     background: #36F;
@@ -37,10 +38,34 @@ body {
     position: relative;
 }
 
-.icon__inner {
-    margin: 7px auto;
-    position: relative;
+.menu-btn span,
+.menu-btn span:before,
+.menu-btn span:after {
+    content: '';
+    display: block;
+    height: 1px;
+    background-color: #FFF;
+    position: absolute;
+
+}
+
+.menu-btn span {
+    width: 10px;
+    left: 7px;
+    top: 9px;
+}
+
+.menu-btn span:before {
+    bottom: -7px;
     width: 20px;
-    height: 20px;
+}
+
+.menu-btn span:after {
+    width: 5px;
+    top: 15px;
+}
+
+#menu-btn-check {
+    display: none;
 }
 

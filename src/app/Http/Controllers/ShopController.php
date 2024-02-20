@@ -37,7 +37,6 @@ class ShopController extends Controller
 
     public function mypage(Request $request){
         $user = Auth::user();
-//        $reservations = Reserved::where('user_id',$user->id)->join('shops','reserveds.shop_id', '=', 'shops.id')->get();
 
         $reservations = Shop::join('reserveds','shops.id', '=', 'reserveds.shop_id')->where('user_id',$user->id)->get();
 

@@ -9,12 +9,12 @@
 <div class="content">
     <div class="left-content">
         <p class="index">予約状況</p>
-        @foreach($reservations as $reservation)
+        @foreach($reservations as $key=>$reservation)
         <div class="reserved-card">
             <div class="table-wrap">
                 <div class="card__header">
                     <i class="bi bi-clock-fill"></i>
-                    <p class="reserved-no">予約{{$reservation->id}}</p>
+                    <p class="reserved-no">予約{{$key+1}}</p>
                     <form action="delete" method="POST">
                     @csrf
                         <input type="hidden" name="reservation__id" value="{{$reservation->id}}"/>

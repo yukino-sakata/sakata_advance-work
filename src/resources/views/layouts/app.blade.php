@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rese</title>
     <link rel="stylesheet" href="{{asset('css/sanitize.css')}}" />
-    <link rel="stylesheet" href="{{ asset('css/common.css')}}" />
+    <link rel="stylesheet" href="{{asset('css/common.css')}}" />
     @yield('css')
 
 </head>
@@ -14,9 +14,13 @@
     <header class="header">
         <div class="header__inner">
             <div class="left-item">
-                <div class="icon">
-                    <div class="icon__inner"></div>
-                </div>
+                <a href="menu2" class="icon">
+                        <input type="checkbox" id="menu-btn-check">
+                            <label for="menu-btn-check" class="menu-btn">
+                                <span></span>
+                            </label>
+                </a>
+
                 <a class="header__logo" href="/">
                 Rese
                 </a>

@@ -12,9 +12,8 @@
 <body>
     <header class="header">
         <div class="header__inner">
-            <a class="header__logo" href="/">
-            ×
-            </a>
+            <button type="button" onClick="history.back()" class="header__logo">×
+            </button>
         </div>
     </header>
 

@@ -19,11 +19,10 @@
     font-weight: lighter;
     color: #FFF;
     text-decoration: none;
-}
-
-.header__logo a {
-    font-family: inherit;
-    font-weight: thin;
+    font-weight: 100;
+    border: none;
+    background: #36F;
+    line-height: 40px;
 }
 
 .content {
