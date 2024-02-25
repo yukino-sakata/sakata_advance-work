@@ -28,9 +28,6 @@
             @csrf
             <p class="reserved__header">予約</p>
                 <div class="reserved__form">
-                    @if(count($errors)>0)
-                    日付を指定してください
-                    @endif
                     <input class="form__item item__date" type="date" name="date">
                     <select class="form__item item__time" name="time">
                         <option value="17:00">17:00</option>
@@ -63,7 +60,11 @@
                             </tr>
                             <tr>
                                 <th>Date</th>
-                            <td></td>
+                            <td>
+                            @if(count($errors)>0)
+                            <span class="error">日付を指定してください</span>
+                            @endif
+                            </td>
                             </tr>
                             <tr>
                                 <th>Time</th>
@@ -79,6 +80,7 @@
             </div>
             <button class="reserved__button">予約する</button>
         </form>
+
     </div>
 </div>
 

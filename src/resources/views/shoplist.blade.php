@@ -16,7 +16,7 @@
                 <p class="shop__area">#{{$shop->area}}</p>
                 <p class="shop__genre">#{{$shop->genre}}</p>
                 <div class="detail">
-                    <form class="form" action="detail" method="POST">
+                    <form class="form" action="detail" method="GET" >
                     @csrf
                         <input type="hidden" name="shopId" value="{{$shop->id}}"/>
                         <button class="shop__detail" href="detail">詳しくみる</button>

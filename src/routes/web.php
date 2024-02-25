@@ -16,15 +16,15 @@ use App\Http\Controllers\ShopController;
 */
 
 Route::middleware('auth')->group(function(){
-    Route::get('/', [ShopController::class, 'shoplist']);
-});
+    Route::get('/', [ShopController::class, 'shoplist']);});
 Route::get('login', [AuthController::class, 'login'])->name('login');
 Route::get('register', [AuthController::class, 'register']);
 Route::get('menu1', [AuthController::class, 'menu1']);
 Route::get('menu2', [AuthController::class, 'menu2']);
 Route::get('mypage', [ShopController::class, 'mypage']);
 Route::get('shoplist', [ShopController::class, 'shoplist']);
-Route::post('detail', [ShopController::class, 'detail']);
+//Route::post('detail', [ShopController::class, 'detail']);
+Route::get('detail', [ShopController::class, 'detail'])->name('detail');
 Route::post('reserved', [ShopController::class, 'reserved']);
 Route::post('delete', [ShopController::class, 'delete']);
 Route::post('like',[ShopController::class,'like']);
