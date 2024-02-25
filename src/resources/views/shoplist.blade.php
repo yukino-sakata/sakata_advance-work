@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('css')
 <link rel="stylesheet" href="{{asset('css/shoplist.css')}}"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
 @endsection
 
 @section('search')
@@ -15,15 +16,30 @@
                 <p class="shop__area">#{{$shop->area}}</p>
                 <p class="shop__genre">#{{$shop->genre}}</p>
                 <div class="detail">
-                    <form action="detail" method="POST">
-                        @csrf
+                    <form class="form" action="detail" method="POST">
+                    @csrf
                         <input type="hidden" name="shopId" value="{{$shop->id}}"/>
                         <button class="shop__detail" href="detail">詳しくみる</button>
                     </form>
-                    <a class="shop__bookmark">&hearts;</a>
+                    @if($shop->shop_id > 0)
+                    <form class="form" action="unlike" method="POST">
+                    @csrf
+                        <input type="hidden" name="shopId" value="{{$shop->id}}"/>
+                        <button class="shop__bookmark red" method="POST">
+                            <i class="bi bi-heart-fill"></i></button>
+                    </form>
+                    @elseif($shop->shop_id == 0)
+                    <form class="form" action="like" method="POST">
+                    @csrf
+                        <input type="hidden" name="shopId" value="{{$shop->id}}"/>
+                        <button class="shop__bookmark gray" method="POST">
+                            <i class="bi bi-heart-fill"></i></button>
+                        @endif
+                    </form>
                 </div>
             </div>
         </div>
-        @endforeach
+    @endforeach
+    </div>
 
 @endsection

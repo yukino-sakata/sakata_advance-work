@@ -15,7 +15,4 @@ class Shop extends Model
         'genre'
     ];
 
-    public function reserved(){
-        return $this -> HasMany('App\Models\Reserved');
-    }
 }

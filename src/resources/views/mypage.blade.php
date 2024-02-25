@@ -8,7 +8,7 @@
 
 <div class="content">
     <div class="left-content">
-        <p class="index">予約状況</p>
+        <p class="index__name">予約状況</p>
         @foreach($reservations as $key=>$reservation)
         <div class="reserved-card">
             <div class="table-wrap">
@@ -42,6 +42,35 @@
             </div>
         </div>
         @endforeach
+    </div>
+    <div class="right-content">
+        <p class="user-name">{{$user->name}}さん</p>
+        <p class="index">お気に入り店舗</p>
+            <div class="shop-cards">
+    @foreach ($bookmarks as $bookmark)
+            <div class="card">
+                <img class="card__image" src="{{$bookmark->image}}" alt="image">
+                <div class="card-info">
+                    <p class="shop__name">{{$bookmark->shop_name}}</p>
+                    <p class="shop__area">#{{$bookmark->area}}</p>
+                    <p class="shop__genre">#{{$bookmark->genre}}</p>
+                    <div class="detail">
+                        <form class="form" action="detail" method="POST">
+                        @csrf
+                            <input type="hidden" name="shopId" value="{{$bookmark->id}}"/>
+                            <button class="shop__detail" href="detail">詳しくみる</button>
+                        </form>
+                        <form class="form" action="unlike" method="POST">
+                        @csrf
+                            <input type="hidden" name="shopId" value="{{$bookmark->id}}"/>
+                            <button class="shop__bookmark" method="POST">
+                                <i class="bi bi-heart-fill"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        @endforeach
+        </div>
     </div>
 </div>
 @endsection

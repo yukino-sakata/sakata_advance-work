@@ -1,4 +1,5 @@
 .content {
+    display: flex;
     width: 80%;
     margin: 0 auto;
 }
@@ -6,19 +7,38 @@
 .left-content {
     width: 400px;
     height: 500px;
+    margin-top: 55px;
+    display: inline-block;
 }
 
-.index {
+.right-content {
+    width: 50%;
+    height: 500px;
+    margin: 0 auto;
+    display: inline-block;
+}
+
+.user-name {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.index,
+.index__name {
     font-weight: bold;
     font-size: 20px;
 }
 
+.index__name {
+    margin-bottom: 40px;
+}
+
 .reserved-card {
     background: #36F;
-    width: 380px;
-    height: 210px;
+    width: 400px;
+    height: 270px;
     color: #FFF;
-    margin: 20px 0;
+    margin-top: 20px;
     padding: 20px;
     box-shadow: 3px 3px 3px #AAA;
     border-radius: 5px;
@@ -29,19 +49,19 @@
     display: flex;
     width: 90%;
     height: 40px;
-    line-height: 20px;
+    line-height: 18px;
     position: relative;
     justify-content: space-between;
 }
 
 .bi {
-    font-size: 20px;
+    font-size: 22px;
 }
 
 .reserved-no {
     position: absolute;
     translate: 40px -12px;
-    font-size: 13px;
+    font-size: 15px;
 }
 
 .delete {
@@ -53,12 +73,13 @@
 
 .table-wrap {
     display: block;
+    margin-top: 15px;
     width: 380px;
-    font-size: 13px;
+    font-size: 15px;
 }
 
 .form-value tr {
-    height: 30px;
+    height: 35px;
 }
 
 .form-value th {
@@ -67,3 +88,77 @@
     font-weight: 100;
 }
 
+.shop-cards {
+    display: flex;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.card {
+    display: inline-block;
+    background: #FFF;
+    width: 250px;
+    height: 270px;
+    margin: 10px 8px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px #AAA;
+}
+
+.card__image {
+    width: 250px;
+    height: 150px;
+    border-radius: 5px 5px 0 0;
+}
+
+.card-info {
+    margin: 20px;
+}
+
+.shop__name {
+    font-weight: bold;
+    margin: 0px 0 0 0;
+    line-height: 15px;
+}
+
+.shop__area,
+.shop__genre {
+    display: inline;
+    font-size: 11px;
+}
+
+.detail {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.form {
+    display: inline-block;
+}
+
+.shop__detail {
+    width: 90px;
+    height: 28px;
+    background: #36F;
+    text-align: center;
+    color: #FFF;
+    font-size: 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+.shop__bookmark {
+    text-decoration: none;
+    border: none;
+    background: #FFF;
+    cursor: pointer;
+    text-align: right;
+    color: red;
+}
+
+.bi-heart-fill {
+    font-size: 30px;
+}

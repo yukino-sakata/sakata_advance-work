@@ -7,11 +7,6 @@ use App\Models\Shop;
 
 class AuthController extends Controller
 {
-    public function index(){
-        $shops = Shop::all();
-        return view('shoplist',['shops'=>$shops]);
-    }
-
     public function login(){
         return view('auth.login');
     }
