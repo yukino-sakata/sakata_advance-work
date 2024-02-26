@@ -28,7 +28,7 @@
             @csrf
             <p class="reserved__header">予約</p>
                 <div class="reserved__form">
-                    <input class="form__item item__date" type="date" name="date">
+                    <input class="form__item item__date" type="date" name="date" value="{{old('date')}}">
                     <select class="form__item item__time" name="time">
                         <option value="17:00">17:00</option>
                         <option value="17:30">17:30</option>
@@ -62,7 +62,7 @@
                                 <th>Date</th>
                             <td>
                             @if(count($errors)>0)
-                            <span class="error">日付を指定してください</span>
+                            <span class="error">{{$errors->first('date')}}</span>
                             @endif
                             </td>
                             </tr>
