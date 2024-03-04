@@ -1,3 +1,27 @@
+.nav {
+    background: #FFF;
+    height: 45px;
+    line-height: 45px;
+    box-shadow: 3px 3px 3px #AAA;
+    border-radius: 5px;
+}
+
+.search-form__item-select{
+    border: none;
+    width: 100px;
+    margin: 0 10px;
+}
+
+.bi-search {
+    line-height: 10px;
+    color: #CCC;
+}
+
+.search-form__item-input {
+    border: none;
+    width: 270px;
+}
+
 .shop-cards {
     display: flex;
     margin: 0 auto;
@@ -75,6 +99,6 @@
     color: #F00;
 }
 
-.bi {
+.bi-heart-fill {
     font-size: 30px;
 }

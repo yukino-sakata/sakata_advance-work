@@ -29,3 +29,4 @@ Route::post('reserved', [ShopController::class, 'reserved']);
 Route::post('delete', [ShopController::class, 'delete']);
 Route::post('like',[ShopController::class,'like']);
 Route::post('unlike',[ShopController::class,'unlike']);
+Route::get('search', [ShopController::class,'search']);

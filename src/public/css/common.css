@@ -5,11 +5,12 @@ body {
 .header {
     height: 70px;
     width: 80%;
-    margin: 0 auto;
+    margin: 0 auto 10px auto;
 }
 
 .header__inner {
     height: 100%;
+    width: 95%;
     display: flex;
     justify-content: space-between;
 }
@@ -20,6 +21,10 @@ body {
     color: #36F;
     text-decoration: none;
     line-height: 74px;
+}
+
+.right-item {
+    padding: 20px 0;
 }
 
 .left-item {

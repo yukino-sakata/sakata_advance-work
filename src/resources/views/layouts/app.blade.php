@@ -14,18 +14,14 @@
     <header class="header">
         <div class="header__inner">
             <div class="left-item">
-                <a href="menu2" class="icon">
-                        <input type="checkbox" id="menu-btn-check">
-                            <label for="menu-btn-check" class="menu-btn">
-                                <span></span>
-                            </label>
-                </a>
-
+                @yield('menu')
                 <a class="header__logo" href="/">
                 Rese
                 </a>
-            <div>
+            </div>
+            <div class="right-item">
             @yield('search')
+            </div>
         </div>
     </header>
 

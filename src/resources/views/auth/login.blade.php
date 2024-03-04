@@ -2,7 +2,14 @@
 @section('css')
 <link rel="stylesheet" href="{{asset('css/login.css')}}"/>
 @endsection
-
+@section('menu')
+<a href="menu1" class="icon">
+    <input type="checkbox" id="menu-btn-check">
+        <label for="menu-btn-check" class="menu-btn">
+            <span></span>
+         </label>
+</a>
+@endsection
 @section('content')
     <div class="form__error">
         <ul class="error">

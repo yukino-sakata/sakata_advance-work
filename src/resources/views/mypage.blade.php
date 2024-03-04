@@ -3,7 +3,14 @@
 <link rel="stylesheet" href="{{asset('css/mypage.css')}}"/>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
 @endsection
-
+@section('menu')
+<a href="menu2" class="icon">
+    <input type="checkbox" id="menu-btn-check">
+        <label for="menu-btn-check" class="menu-btn">
+            <span></span>
+         </label>
+</a>
+@endsection
 @section('content')
 
 <div class="content">
@@ -55,7 +62,7 @@
                     <p class="shop__area">#{{$bookmark->area}}</p>
                     <p class="shop__genre">#{{$bookmark->genre}}</p>
                     <div class="detail">
-                        <form class="form" action="detail" method="POST">
+                        <form class="form" action="detail" method="GET">
                         @csrf
                             <input type="hidden" name="shopId" value="{{$bookmark->id}}"/>
                             <button class="shop__detail" href="detail">詳しくみる</button>

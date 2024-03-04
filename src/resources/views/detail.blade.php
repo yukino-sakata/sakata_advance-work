@@ -2,8 +2,13 @@
 @section('css')
 <link rel="stylesheet" href="{{asset('css/detail.css')}}"/>
 @endsection
-
-@section('search')
+@section('menu')
+<a href="menu2" class="icon">
+    <input type="checkbox" id="menu-btn-check">
+        <label for="menu-btn-check" class="menu-btn">
+            <span></span>
+         </label>
+</a>
 @endsection
 @section('content')
 
@@ -11,7 +16,7 @@
     <div class="left-content">
         <div class="index">
             <a class="back" href="shoplist"><</a>
-            <p class="shop__name">{{$shop->shop__name}}</p>
+            <p class="shop__name">{{$shop->shop_name}}</p>
         </div>
         <img class="image" src="{{$shop->image}}">
         <div class="tag">

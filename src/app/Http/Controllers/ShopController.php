@@ -13,14 +13,16 @@ use Auth;
 class ShopController extends Controller
 {
     public function shoplist(){
-        $user = Auth::user();
-        $shops = Bookmark::rightJoin('shops', 'bookmarks.shop_id', '=', 'shops.id')->get();
-        return view('shoplist',['shops'=>$shops]);
+        $userId = Auth::user()->id;
+        $shops = Bookmark::rightJoin('shops','bookmarks.shop_id','=','shops.id')->get();
+
+        return view('shoplist',['shops'=>$shops , 'userId'=>$userId]);
     }
 
     public function detail(Request $request){
         $shopId = $request->shopId;
         $shop = Shop::find($shopId);
+        var_dump($shopId);
         return view('detail',['shop'=>$shop]);
     }
 
@@ -70,5 +72,12 @@ class ShopController extends Controller
 
         $like = Bookmark::where('shop_id',$request->shopId)->where('user_id',$user)->delete();
         return back();
+    }
+
+    public function search(Request $request){
+        $shops = Shop::with('bookmark')->AreaSearch($request->area)->GenreSearch($request->genre)->keywordSearch($request->keyword)->get();
+        $userId = Auth::user()->id;
+
+        return view('shoplist',['shops'=>$shops, 'userId'=>$userId]);
     }
 }
