@@ -31,7 +31,19 @@ class ShopController extends Controller
     }
 
     public function search(Request $request){
-        $shops = Shop::with('bookmark')->AreaSearch($request->area)->GenreSearch($request->genre)->keywordSearch($request->keyword)->get();
+            $shops = Shop::leftJoin('bookmarks','shops.id','=','bookmarks.shop_id')->AreaSearch($request->area)->GenreSearch($request->genre)->keywordSearch($request->keyword)
+            ->select(
+            'shops.id as shopId',
+            'shops.shop_name as shop_name',
+            'shops.area as area',
+            'shops.genre as genre',
+            'shops.comment as comment',
+            'shops.image as image',
+            'bookmarks.id as as bookmark_id',
+            'bookmarks.user_id as bookmark_user_id',
+            'bookmarks.shop_id as bookmark_shop_id'
+            )
+        ->get();
         $userId = Auth::user()->id;
 
         return view('shoplist',['shops'=>$shops, 'userId'=>$userId]);
@@ -40,7 +52,6 @@ class ShopController extends Controller
     public function detail(Request $request){
         $shopId = $request->shopId;
         $shop = Shop::find($shopId);
-        var_dump($shopId);
         return view('detail',['shop'=>$shop]);
     }
 

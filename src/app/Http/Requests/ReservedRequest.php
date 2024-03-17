@@ -23,7 +23,7 @@ class ReservedRequest extends FormRequest
      */
     public function rules(){
         return [
-            'date' => 'required|after:today'
+            'date' => 'required'
         ];
     }
 
@@ -31,7 +31,6 @@ class ReservedRequest extends FormRequest
 {
     return [
         'date.required' => '日付を選択してください',
-        'date.after' => '過去の日付は選択できません',
     ];
 }
 }
