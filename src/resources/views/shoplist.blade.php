@@ -49,20 +49,20 @@
                 <div class="detail">
                     <form class="form" action="detail" method="GET" >
                     @csrf
-                        <input type="hidden" name="shopId" value="{{$shop->shop_id}}"/>
+                        <input type="hidden" name="shopId" value="{{$shop->shopId}}"/>
                         <button class="shop__detail" href="detail">詳しくみる</button>
                     </form>
-                    @if(($shop->shop_id == $shop->id) && ($shop->user_id == $userId))
+                    @if(($shop->shopId == $shop->bookmark_shop_id) && ($shop->bookmark_user_id == $userId))
                     <form class="form" action="unlike" method="POST">
                     @csrf
-                        <input type="hidden" name="shopId" value="{{$shop->id}}"/>
+                        <input type="hidden" name="shopId" value="{{$shop->shopId}}"/>
                         <button class="shop__bookmark red" method="POST">
                             <i class="bi bi-heart-fill"></i></button>
                     </form>
                     @else
                     <form class="form" action="like" method="POST">
                     @csrf
-                        <input type="hidden" name="shopId" value="{{$shop->id}}"/>
+                        <input type="hidden" name="shopId" value="{{$shop->shopId}}"/>
                         <button class="shop__bookmark gray" method="POST">
                             <i class="bi bi-heart-fill"></i></button>
                     @endif

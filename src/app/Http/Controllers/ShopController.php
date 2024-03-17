@@ -14,9 +14,27 @@ class ShopController extends Controller
 {
     public function shoplist(){
         $userId = Auth::user()->id;
-        $shops = Bookmark::rightJoin('shops','bookmarks.shop_id','=','shops.id')->get();
-
+        $shops = Shop::leftJoin('bookmarks','shops.id','=','bookmarks.shop_id')
+            ->select(
+            'shops.id as shopId',
+            'shops.shop_name as shop_name',
+            'shops.area as area',
+            'shops.genre as genre',
+            'shops.comment as comment',
+            'shops.image as image',
+            'bookmarks.id as as bookmark_id',
+            'bookmarks.user_id as bookmark_user_id',
+            'bookmarks.shop_id as bookmark_shop_id'
+            )
+            ->get();
         return view('shoplist',['shops'=>$shops , 'userId'=>$userId]);
+    }
+
+    public function search(Request $request){
+        $shops = Shop::with('bookmark')->AreaSearch($request->area)->GenreSearch($request->genre)->keywordSearch($request->keyword)->get();
+        $userId = Auth::user()->id;
+
+        return view('shoplist',['shops'=>$shops, 'userId'=>$userId]);
     }
 
     public function detail(Request $request){
@@ -74,10 +92,5 @@ class ShopController extends Controller
         return back();
     }
 
-    public function search(Request $request){
-        $shops = Shop::with('bookmark')->AreaSearch($request->area)->GenreSearch($request->genre)->keywordSearch($request->keyword)->get();
-        $userId = Auth::user()->id;
 
-        return view('shoplist',['shops'=>$shops, 'userId'=>$userId]);
-    }
 }
