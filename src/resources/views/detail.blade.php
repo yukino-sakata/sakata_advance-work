@@ -65,8 +65,7 @@
                             </tr>
                             <tr>
                                 <th>Date</th>
-                                <td>
-                                    <p id="js-date"></p>
+                                <td id="js-date">
                                     @if(count($errors)>0)
                                     <span class="error" id="error">{{$errors->first('date')}}</span>
                                     @endif
@@ -74,15 +73,11 @@
                             </tr>
                             <tr>
                                 <th>Time</th>
-                                <td>
-                                    <p id="js-time">17:00</p>
-                                </td>
+                                <td id="js-time">17:00</td>
                             </tr>
                             <tr>
                                 <th>Number</th>
-                                <td>
-                                    <p id="js-number">1人</p>
-                                </td>
+                                <td  id="js-number">1人</td>
                             </tr>
                         </table>
                                 <script>
