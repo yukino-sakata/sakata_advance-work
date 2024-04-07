@@ -23,7 +23,6 @@ Route::get('menu1', [AuthController::class, 'menu1']);
 Route::get('menu2', [AuthController::class, 'menu2']);
 Route::get('mypage', [ShopController::class, 'mypage']);
 Route::get('shoplist', [ShopController::class, 'shoplist']);
-//Route::post('detail', [ShopController::class, 'detail']);
 Route::get('detail', [ShopController::class, 'detail'])->name('detail');
 Route::post('reserved', [ShopController::class, 'reserved']);
 Route::post('delete', [ShopController::class, 'delete']);
