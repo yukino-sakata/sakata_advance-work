@@ -31,3 +31,5 @@ https://docs.google.com/spreadsheets/d/11lw9QBfea62HYKoXqPG44ZCzGOFPn2ThnLZrQlSS
 https://docs.google.com/spreadsheets/d/11lw9QBfea62HYKoXqPG44ZCzGOFPn2ThnLZrQlSSMuw/edit#gid=320603785
 
 #環境構築
+・必要ソフトのインストール
+・
