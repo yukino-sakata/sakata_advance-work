@@ -32,4 +32,12 @@ https://docs.google.com/spreadsheets/d/11lw9QBfea62HYKoXqPG44ZCzGOFPn2ThnLZrQlSS
 
 #環境構築
 ・必要ソフトのインストール
-・
+・Docker-composeを設定する
+　`$ docker-compose up -d --build` 
+・laravelのパッケージをインストール
+　`$ docker-compose exec php bash` 
+　`$ composer install`
+・シーディングの実行
+　`$ php artisan db:seed`
+・会員登録画面で会員を作成
+・任意の予約やブックマーク登録/削除を実行
